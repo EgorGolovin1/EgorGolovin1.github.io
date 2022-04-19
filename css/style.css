@@ -66,12 +66,15 @@ h3 {
       font-style: italic; }
     .main-block__input:focus-visible {
       outline: none; }
+    .main-block__input:focus {
+          outline: none; }
   .main-block__explanation {
     margin-top: 30px;
     padding-bottom: 30px; }
     @media (min-width: 0px) and (max-width: 988px) {
       .main-block__explanation {
-        margin-top: 150px; } }
+        margin-top: 70px;
+        padding-bottom: 180px; } }
     .main-block__explanation_item {
       margin-top: 10px; }
       .main-block__explanation_item .myProfile {
