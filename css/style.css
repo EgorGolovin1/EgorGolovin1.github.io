@@ -32,7 +32,8 @@ h2 {
   opacity: 0.65; }
   @media (min-width: 0px) and (max-width: 988px) {
     h2 {
-      font-size: 18px; } }
+      font-size: 18px;
+      margin-top: 70px; } }
 
 h3 {
   margin: 0;
