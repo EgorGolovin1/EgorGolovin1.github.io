@@ -169,6 +169,9 @@ h3 {
       background: none;
       padding: 5px;
       font-size: 14px; }
+@media (min-width: 0px) and (max-width: 988px) {
+        .main-block__info-wrapper .active-task-btn, .main-block__info-wrapper .completed-task-btn, .main-block__info-wrapper .all-task-btn, .main-block__info-wrapper .clear-task-btn {
+          color: #1B1F2B; } }
       .main-block__info-wrapper .active-task-btn:hover, .main-block__info-wrapper .completed-task-btn:hover, .main-block__info-wrapper .all-task-btn:hover, .main-block__info-wrapper .clear-task-btn:hover {
         text-decoration: underline; }
     .main-block__info-wrapper .clear-task-btn {
