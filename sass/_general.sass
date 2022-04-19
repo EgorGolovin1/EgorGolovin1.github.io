@@ -1,0 +1,255 @@
+html,body
+    min-height: 100%
+
+body
+    background: url(../img/phill.png) repeat 
+    background-color: $bg-color
+    backdrop-filter: blur(12px)
+    -webkit-backdrop-filter: blur(12px)
+
+h1
+    font-size: 100px
+    font-weight: 700
+    color: $dark-blue
+    text-align: center
+    opacity: .55
+    font-family: Roboto, Arial, sans-serif
+    background-color: $aqua
+    background-image: linear-gradient(90deg, $light-pink, $aqua)
+    -webkit-background-clip: text
+    -webkit-text-fill-color: transparent
+    transform: rotate(5deg)
+    
+h2
+    font-size: 24px
+    color: $pink
+    font-style: italic
+    font-weight: 700
+    opacity: .65
+    @include forPhone
+        font-size: 18px
+        margin-top: 70px
+        
+h3
+    margin: 0
+    font-size: 12px
+    color: $black
+    opacity: 0.55
+
+
+.main-block
+    display: flex
+    flex-flow: column
+    justify-content: center
+    align-items: center
+    min-height: 650px
+    &__input
+        width: 550px
+        height: 65px
+        padding: 16px 16px 16px 60px
+        font-size: 24px
+        border: none
+        border-radius: 20px
+        box-shadow: 3px 3px 3px 2px rgba(0, 0, 0, 0.4)
+        background: $white
+        @include forPhone
+            width: 350px
+            height: 45px
+            padding: 8px 8px 8px 30px
+            font-size: 16px
+        &::placeholder
+            color: $gray_300
+            font-style: italic
+        &:focus-visible
+            outline: none
+        &:focus
+            outline: none
+    &__explanation
+        margin-top: 30px
+        padding-bottom: 30px
+        @include forPhone
+            margin-top: 70px
+            padding-bottom: 180px
+        &_item  
+            margin-top: 10px
+            .myProfile
+                color: $black
+                text-decoration: none
+                transition: .2s
+                font-weight: 700
+                &:hover
+                    text-decoration: underline 
+                    color: $beige_100
+    &__actualTasks
+        margin-top: 30px
+        margin-right: 250px
+        min-width: 144px
+        @include forPhone
+            margin-right: 220px
+    &__addTodo
+        position: relative
+    &__btnAdd
+        width: 80px
+        height: 30px
+        border-radius: 30px
+        font-size: 14px
+        position: absolute
+        left: 450px
+        top: 18px
+        border: none
+        background: $green_300
+        color: $white
+        @include forPhone
+            width: 75px
+            height: 25px
+            left: 263px
+            top: 10px
+    &__todos-item
+        display: flex
+        position: relative
+        width: 470px
+        height: 50px
+        background-color: $yellow
+        border-radius: 30px
+        padding: 12px 20px
+        margin-top: 20px
+        opacity: .8
+        @include forPhone
+            width: 320px
+            height: 45px
+            margin-top: 15px
+            padding: 10px 20px
+        &.checked
+            background-color: $lime
+            opacity: .8
+        &.deleting
+            background-color: $delete-color
+            opacity: .9
+            transform: translateX(250px) scale(0.8)
+            transition: .4s
+            @include forPhone
+                transform: translateX(80px) scale(0.8)
+        &.none
+            display: none
+    &__info-wrapper
+        width: 450px
+        display: flex
+        justify-content: center
+        margin-top: 10px
+        background-color: $green_100
+        opacity: 0.7
+        border-radius: 2px 2px 20px 20px
+        font-size: 14px
+        @include forPhone
+            width: 310px
+        .score-tasks
+            display: inline-block
+            margin-right: 10px
+            @include forPhone
+                display: block
+                width: fit-content
+                margin-right: auto
+                margin-left: auto
+        .active-task-btn,.completed-task-btn,.all-task-btn,.clear-task-btn
+            border: none
+            background: none
+            padding: 5px
+            font-size: 14px
+            @include forPhone
+                color: $black
+            &:hover
+                text-decoration: underline
+        .clear-task-btn
+            display: block
+            margin-right: auto
+            margin-left: auto
+    &__discription
+        font-weight: 700
+        font-size: 16px
+        line-height: 1.7
+        position: relative
+        @include forPhone
+            line-height: 1.4
+        &.checked
+            color: $gray_200
+            &::before
+                content: ''
+                width: 100%
+                position: absolute
+                border-top: 2px solid $gray_300
+                position: absolute
+                top: 12px
+    &__buttons
+        position: absolute
+        left: 380px
+        @include forPhone
+            left: 240px
+    &__btn-delete
+        width: 50px
+        height: 25px
+        background: rgba(0,0,0,0)
+        position: absolute
+        cursor: pointer
+        absolute: relative
+        padding-top: 10px
+        &::before
+            content: ''
+            border-right: 25px solid red
+            width: 25px
+            height: 3px
+            position: absolute
+            transform: rotate(135deg)
+            @include forPhone
+                border-right: 20px solid red
+                width: 20px
+        &::after
+            content: ''
+            border-right: 25px solid red
+            height: 3px
+            position: absolute
+            transform: rotate(45deg)
+            @include forPhone
+                border-right: 20px solid red
+                width: 20px
+        &:hover
+            &::after
+                transition: .5s
+                transform: rotate(135deg)
+            &::before
+                transition: .5s
+                transform: rotate(225deg)
+    &__btn-complete
+        margin-right: 5px
+        height: 25px
+        width: 25px
+        border-radius: 50px
+        background-image: none
+        -webkit-appearance: none
+        -moz-appearance: none
+        appearance: none
+        box-shadow: none
+        background: $white
+        padding: 7px
+        cursor: pointer
+        @include forPhone
+            height: 20px
+            width: 20px
+            padding: 5px
+        &:focus-visible 
+            outline: none
+        &:checked
+            &::before
+                content: ''
+                border-top: 2px solid $toxic-green
+                border-right: 2px solid $toxic-green
+                width: 12.24px
+                height: 7.12px
+                position: absolute
+                transform: rotate(135deg)
+                @include forPhone
+                    width: 12.24px
+                    height: 7.12px
+
+
+
+
