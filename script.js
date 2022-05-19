@@ -125,7 +125,7 @@ const fillHtmlList = () => {
                 e.target.style.height = e.target.scrollHeight + 2 + "px";
             });
             elem.addEventListener("keydown", (but) => {
-                if (but.keyCode == 13) {
+                if (but.keyCode == 13 && elem.textContent.length) {
                     let index = elem.id,
                         value = elem.innerText;
                     tasks[index].description = value;
